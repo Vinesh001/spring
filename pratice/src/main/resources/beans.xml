@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="payment" class="com.example.pratice.Payment">
+        <constructor-arg value="PAY123"/>
+        <constructor-arg value="1500.0"/>
+    </bean>
+
+    <bean id="notification" class="com.example.pratice.Notification">
+        <property name="notificationMessage" value="Your order has been placed successfully."/>
+    </bean>
+
+    <bean id="customer" class="com.example.pratice.Customer">
+        <property name="customerName" value="Vinesh"/>
+        <property name="customerId" value="CUST001"/>
+        <property name="customerEmail" value="vinesh@example.com"/>
+    </bean>
+
+    <bean id="order" class="com.example.pratice.Order">
+        <constructor-arg value="ORD001"/>
+        <constructor-arg value="2025-07-20"/>
+        <constructor-arg value="1500.0"/>
+        <constructor-arg ref="payment"/>
+        <property name="notification" ref="notification"/>
+        <property name="customer" ref="customer"/>
+    </bean>
+
+</beans>

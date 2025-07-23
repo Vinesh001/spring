@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student" class="com.amdocs.studentConstructor.Student">
+        <constructor-arg>
+            <list>
+                <value>Vinesh</value>
+                <value>Aryam</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg>
+            <map>
+                <entry key="home" value="Delhi"/>
+                <entry key="office" value="Gurgaon"/>
+            </map>
+        </constructor-arg>
+        <constructor-arg>
+            <set>
+                <value>Math</value>
+                <value>Physics</value>
+                <value>Chemistry</value>
+            </set>
+        </constructor-arg>
+    </bean>
+
+</beans>
